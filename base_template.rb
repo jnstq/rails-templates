@@ -22,6 +22,13 @@ config/database.yml
 db/*.sqlite3
 END
 
+file "spec/factories.rb", <<-END
+# Factory.define :user do |u|
+#  u.first_name 'Joe'
+#  u.last_name  'Blow'
+# end
+END
+
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
 

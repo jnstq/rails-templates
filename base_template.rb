@@ -2,10 +2,15 @@ run "echo TODO > README"
 
 generate :nifty_layout
 
+gem 'rspec', :lib => false
+gem 'rspec-rails', :lib => false
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+gem 'thoughtbot-shoulda', :lib => false, :source => 'http://gems.github.com'
+gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+
 rake "gems:install", :sudo => true
 
-generate :rspec if yes?("Do you want to use RSpec?")
+generate :rspec # if yes?("Do you want to use RSpec?")
 
 git :init
 
